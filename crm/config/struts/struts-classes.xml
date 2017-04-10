@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 配置课程包 -->
+	<package name="classes" extends="common" namespace="/">
+		<action name="classesAction_*" class="pers.yijin.crm.classes.web.action.ClassesAction" method="{1}">
+			<result name="findAll">/WEB-INF/pages/classesm/listClass.jsp</result>
+			<result name="uploadUI">/WEB-INF/pages/classesm/uploadClass.jsp</result>
+			<result name="upload" type="redirectAction">classesAction_findAll</result>
+			<result name="download" type="stream">
+				<!-- 流的信息 -->
+				<param name="inputName">inputStream</param>
+				<!-- 告诉浏览器响应正文的MIME类型 -->
+				<param name="contentType">application/octet-stream</param>
+				<!-- 告知浏览器要下载 -->
+				<param name="contentDisposition">attachment;filename=%{fileName}</param>
+			</result>
+			<result name="uploadInput">/WEB-INF/pages/error.jsp</result>
+		</action>
+	</package>
+</struts>
