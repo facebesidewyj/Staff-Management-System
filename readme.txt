@@ -1,3 +1,1 @@
-A little management system.
-Github...
-one more time
+A little management system, only for learning.
