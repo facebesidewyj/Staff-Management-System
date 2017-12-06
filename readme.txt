@@ -1,1 +1,1 @@
-A little management system,only for learning
+A little management system,only for learning.
